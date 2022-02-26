@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/buscar_item"
+        android:icon="@drawable/icon_map"
+        android:title="SEMBRAR" />
+
+    <item
+        android:id="@+id/cazar_item"
+        android:icon="@drawable/ic_icon_hunt"
+        android:title="TESORO" />
+
+    <item
+        android:id="@+id/grow_item"
+        android:icon="@drawable/ic_icon_grow"
+        android:title="CULTIVO" />
+
+    <item
+        android:id="@+id/shop_item"
+        android:icon="@drawable/ic_icon_shop"
+        android:title="TIENDA" />
+
+</menu>

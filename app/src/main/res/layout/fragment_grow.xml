@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/grow_bg"
+    tools:context=".fragments.GrowFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="58dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="10dp"
+            android:contentDescription="Logo guia"
+            android:src="@drawable/ic_icon_grow"
+            app:layout_constraintBottom_toBottomOf="@id/title2"
+            app:layout_constraintEnd_toStartOf="@id/title1"
+            app:layout_constraintStart_toStartOf="@id/frame"
+            app:layout_constraintTop_toTopOf="@id/frame"
+            app:tint="@color/grow_ic" />
+
+        <TextView
+            android:id="@+id/title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Guía de"
+            android:textColor="#512C2A"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/gothamroundedbold"
+            app:layout_constraintBottom_toTopOf="@id/title2"
+            app:layout_constraintStart_toEndOf="@id/icon"
+            app:layout_constraintTop_toTopOf="@id/icon"
+            app:layout_constraintHeight_max="35dp"/>
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Cultivo"
+            android:textColor="#A25853"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/gothamroundedbold"
+            app:layout_constraintBottom_toBottomOf="@id/icon"
+            app:layout_constraintStart_toEndOf="@id/icon"
+            app:layout_constraintTop_toBottomOf="@id/title1"
+            app:layout_constraintHeight_max="40dp"/>
+
+        <ImageView
+            android:id="@+id/ic_count"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_count"
+            app:layout_constraintEnd_toEndOf="@id/frame"
+            app:layout_constraintTop_toTopOf="@id/frame"/>
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/ic_count"
+            app:layout_constraintTop_toBottomOf="@id/ic_count"
+            app:layout_constraintStart_toStartOf="@id/ic_count"
+            android:text="0"
+            android:textSize="20dp"
+            android:fontFamily="@font/gothamroundedmedium"/>
+
+        <!--Progress Bar created-->
+        <com.kofigyan.stateprogressbar.StateProgressBar
+            android:id="@+id/progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:spb_animateToCurrentProgressState="true"
+            app:spb_checkStateCompleted="true"
+            app:spb_currentStateDescriptionColor="#0F9D58"
+            app:spb_currentStateNumber="one"
+            app:spb_maxStateNumber="five"
+            app:spb_stateBackgroundColor="#BDBDBD"
+            app:spb_stateDescriptionColor="#808080"
+            app:spb_stateForegroundColor="#0F9D58"
+            app:spb_stateNumberBackgroundColor="#808080"
+            app:spb_stateNumberForegroundColor="#eeeeee"
+            app:layout_constraintTop_toBottomOf="@id/title2"
+            android:layout_marginTop="20dp"/>
+
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:minLines="2"
+            android:text="Selecciona el tipo de planta que deseas cultivar de forma simple y segura"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:fontFamily="@font/gothamroundedmedium"
+            app:layout_constraintTop_toBottomOf="@id/progress" />
+
+        <ImageButton
+            android:id="@+id/btn_sativa"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="134dp"
+            android:layout_height="143dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/ic_sativa"
+            android:scaleType="fitCenter"
+            android:background="@drawable/ly_rounded"
+            android:elevation="20dp"
+            android:padding="5dp"
+            app:layout_constraintStart_toStartOf="@id/frame"
+            app:layout_constraintTop_toBottomOf="@id/text"
+            app:layout_constraintEnd_toStartOf="@id/btn_indica"/>
+
+        <ImageButton
+            android:id="@+id/btn_indica"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="134dp"
+            android:layout_height="143dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/ic_indica"
+            android:scaleType="fitCenter"
+            android:background="@drawable/ly_rounded"
+            android:elevation="20dp"
+            android:padding="5dp"
+            app:layout_constraintStart_toEndOf="@id/btn_sativa"
+            app:layout_constraintTop_toBottomOf="@id/text"
+            app:layout_constraintEnd_toEndOf="@id/frame"/>
+
+        <ImageButton
+            android:id="@+id/btn_rudelaris"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="134dp"
+            android:layout_height="143dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_rudelaris"
+            android:scaleType="fitCenter"
+            android:background="@drawable/ly_rounded"
+            android:elevation="20dp"
+            android:padding="5dp"
+            app:layout_constraintStart_toStartOf="@id/frame"
+            app:layout_constraintEnd_toEndOf="@id/frame"
+            app:layout_constraintTop_toBottomOf="@id/btn_indica" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>
